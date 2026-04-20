@@ -85,7 +85,12 @@ Esta es la fase central del ciclo de vida de MLOps:
 
 Para superar las limitaciones del Accuracy en datos desbalanceados, se aplicaron:
 
-- **Evidently AI:** para generar reportes de calidad del modelo y analizar la separación de clases.
+- **Evidently AI:** se incorporó la librería Evidently como parte del enfoque de MLOps para monitorear la calidad de los datos y el desempeño del modelo. Esta herramienta permite analizar de forma visual y estructurada posibles cambios en la distribución de los datos (data drift) y evaluar métricas clave del modelo, facilitando su validación y futura implementación en entornos productivos.
+  
+- Reporte de Data Drift: se compararon los conjuntos de entrenamiento y test para detectar diferencias en la distribución de las variables, identificando posibles desviaciones naturales entre datos históricos y nuevos.
+- Simulación de Drift: se generaron modificaciones controladas sobre el dataset (cambios de escala, desplazamientos y ruido) para validar la capacidad de la herramienta de detectar distintos tipos de drift de forma realista.
+- Reporte de Performance: se evaluó el rendimiento del modelo mediante métricas como precision, recall y matriz de confusión, utilizando dashboards que facilitan la interpretación de resultados.
+  
 - **SHAP (KernelExplainer):** para proveer transparencia al modelo (Caja Negra), cuantificando el impacto de cada variable en la decisión final. Esto permite validar que el modelo está tomando decisiones basadas en lógicas de negocio correctas y no en sesgos del dataset.
 
 ---
